@@ -20,7 +20,11 @@ Therefore, write a function that returns an exact copy of object1
 var object1 = {name: 'Anja'}
 
 function copyObject(object1) {
-
+    var newObj = {};
+    for (key in object1){
+        newObj[key] = object1[key];
+    }
+    return newObj;
 }
 
 object2 = copyObject(object1)
@@ -28,4 +32,5 @@ console.log(object2)
 // outputs { name: 'Anja' }
 object2.name = 'Laurens'
 console.log(object1.name)
+console.log(object2);
 // outputs Anja

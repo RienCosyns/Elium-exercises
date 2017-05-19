@@ -5,5 +5,11 @@ print out 'true'. If not print out 'false'.
 
 */
 
-var key = 'name'
+var key = 'ehe'
 var object = {name: 'Kirill', age: 27, country: 'South-Africa'}
+
+function check (obj, key){
+    return obj[key] ? true : false;
+}
+
+console.log(check(object, key));

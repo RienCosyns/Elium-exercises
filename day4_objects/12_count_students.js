@@ -15,8 +15,14 @@ var someDevelopers = [
 ]
 
 function countJavascriptDevelopers(object) {
-
+  var counter = 0;
+  for (i in object){
+    if (object[i].continent === "Europe"){
+      counter += 1;
+    }
+  }
+  return counter
 }
 
 console.log(countJavascriptDevelopers(someDevelopers))
-// outputs 2
+// outputs 4

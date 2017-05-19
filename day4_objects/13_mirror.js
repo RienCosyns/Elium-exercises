@@ -8,6 +8,17 @@ mirrored.
 var object = {one: 1, two: 2, three: 3, four: 4, five: 5}
 
 function mirror(object) {
+    var keyArr = Object.keys(object)
+    var valArr = [];
+    var newObj = {};
+    for (key in object){
+        valArr.push(object[key]);
+    }
+
+    for (var i = keyArr.length - 1; i >= 0; i--){
+        newObj[keyArr[i]] = valArr[i];
+    }
+    return newObj;
 
 }
 

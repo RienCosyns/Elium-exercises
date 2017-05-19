@@ -15,7 +15,31 @@ var object1 = {a: 1, b: 2, c: 3}
 var object2 = {b: 'second', c: 'third', d: 'fourth'}
 
 function modifyObject(object1, object2, boolean) {
-
+    var myObj = Object.assign({}, object1);
+	var myObj2 = Object.assign({}, object2);
+	if (boolean === undefined){
+		boolean = true;
+	}
+	if (boolean === true){
+		console.log("Overwrite mode set")
+		// loop through the keys
+		for (key in myObj2){
+			// if the key exists in the second object	
+			myObj[key] = myObj2[key];
+		}
+	}else {
+		console.log("Overwrite mode disabled")
+		// only add the pair existing in object 2 to object 1
+		for (key in myObj2){
+			if (key in myObj){
+				continue;
+			}else{
+				myObj[key] = myObj2[key]
+			}
+		}
+	}
+	// myObj.c = myObj2.c;
+	return myObj;
 }
 
 console.log(modifyObject(object1, object2, true))

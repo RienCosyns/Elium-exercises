@@ -22,7 +22,12 @@ The original recipe:
 var recipe = {'caster sugar': 160, 'butter': 170, 'eggs': 3, 'self-raising flour': 115, 'cocao powder': 55}
 
 function chocolateCake(ingredient, amount) {
-
+  myRecipe = Object.assign(1, recipe);
+  var diff = myRecipe[ingredient] / amount;
+  for (key in myRecipe){
+    myRecipe[key] = myRecipe[key]/diff;
+  }
+  return myRecipe
 }
 
 console.log(chocolateCake('caster sugar', 80))
