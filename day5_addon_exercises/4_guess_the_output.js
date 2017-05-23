@@ -13,6 +13,3 @@ console.log(greaterThan10(11))
 
 // outputs ??
 
-
-
-
