@@ -36,14 +36,32 @@ var bank = [
 
 function showBalance(username) {
 	// the code from previous exercise
+	var userAccount = bank.filter(function(user){
+		return user.name === username
+	});
+
+	return userAccount[0].amount;
 }
 
 function deposit(username, amountToDeposit) {
-	// the code from previous exercise
+	for (var i = 0; i < bank.length; i++){
+		if (bank[i].name === username){
+			bank[i].amount += amountToDeposit;
+		}
+	}
 }
 
 function withdraw(username, amountToWithdraw) {
-
+	for (var i = 0; i < bank.length; i++){
+		if (bank[i].name === username){
+			if (amountToWithdraw <= bank[i].amount){
+				bank[i].amount -= amountToWithdraw;
+				return "Withdrawal of " + amountToWithdraw + " accepted";
+			}else{
+				return "Unsufficient funds"
+			}	
+		}
+	}
 }
 
 console.log(showBalance('Laurens'))

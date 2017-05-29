@@ -20,5 +20,9 @@ console.log(sum(5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,10,10,10,10,10))
 //outputs 150
 
 function sum(args) {
-
+    // console.log(...arguments);
+    args = new Array(...arguments);
+    return args.reduce(function(prev, curr){
+        return prev + curr;
+    })
 }

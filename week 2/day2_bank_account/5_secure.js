@@ -3,7 +3,7 @@ Imagine we're a bank and we have a lot of accounts!
 
 Write a program for an ATM machine.
 
-Create functionality so that only if the user supplies to correct PIN code,
+Create functionality so that only if the user supplies the correct PIN code,
 he/she gets access to the showBalance, deposit and withdraw functions.
 
 If the pincode does not match, output a message saying 'Incorrect pincode'
@@ -32,20 +32,50 @@ var bank = [
 
 
 function enterPinCode(username, pincode, func, amount) {
-	
+	var pincodeIsValid = false;
+	var returnMessage = "";
+
+	bank.forEach(function(val){
+		if (val.name === username){
+			if (val.pincode === pincode){
+				returnMessage =  func(username, amount);
+			}else{
+				returnMessage =  "Incorrect pincode"
+			}
+		}
+	})
+	return returnMessage;
 }
 
 
 function showBalance(username) {
 	// the code from previous exercise
+	var userAccount = bank.filter(function(user){
+		return user.name === username
+	});
+
+	return userAccount[0].amount;
 }
 
 function deposit(username, amountToDeposit) {
-	// code from the previous exercise
+	for (var i = 0; i < bank.length; i++){
+		if (bank[i].name === username){
+			bank[i].amount += amountToDeposit;
+		}
+	}
 }
 
 function withdraw(username, amountToWithdraw) {
-	// code from the previous exercise
+	for (var i = 0; i < bank.length; i++){
+		if (bank[i].name === username){
+			if (amountToWithdraw <= bank[i].amount){
+				bank[i].amount -= amountToWithdraw;
+				return "Withdrawal of " + amountToWithdraw + " accepted";
+			}else{
+				return "Unsufficient funds"
+			}	
+		}
+	}
 }
 
 

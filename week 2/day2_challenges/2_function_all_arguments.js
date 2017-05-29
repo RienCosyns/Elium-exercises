@@ -23,6 +23,11 @@ console.log(operations(10,10,5,multiply))
 
 
 function operations(args) {
+	args = new Array(...arguments);
+	var func = args.pop();
+	return args.reduce(function(prev, curr){
+		return func(prev, curr);
+	})
 
 }
 

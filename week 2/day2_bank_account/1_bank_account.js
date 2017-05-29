@@ -11,14 +11,16 @@ Write a function withdraw that withdraws or subtracts a given amount from your a
 var amount = 0
 
 function checkBalance() {
-
-
+    return amount;
+}
 function deposit(n) {
-
+    amount += n;
+    return amount;
 }
 
 function withdraw(n) {
-
+    amount -= n;
+    return amount;
 }
 
 console.log(checkBalance())

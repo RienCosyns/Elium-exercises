@@ -37,12 +37,27 @@ var bank = {
 
 
 function showBalance(username) {
-// code from previous exercise
+	var userAccount = bank.userdata.filter(function(user){
+		return user.name == username;
+	})
+
+	return userAccount[0].amount;
 }
 
 
 function deposit(username, amountToDeposit) {
+	var message = "";
 
+	for (var i = 0; i < bank.userdata.length; i++){
+		if (bank.userdata[i].name == username){
+			bank.userdata[i].amount += amountToDeposit;
+			message = amountToDeposit + " was deposited";
+			return message;
+		}else{
+			message = "No such user"
+		}
+	}
+	return message;
 }
 
 console.log(bank.deposit('Laurens', 600))

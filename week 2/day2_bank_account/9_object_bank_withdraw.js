@@ -42,18 +42,49 @@ var bank = {
 
 
 function showBalance(username) {
-// code from previous exercise
+	var userAccount = bank.userdata.filter(function(user){
+		return user.name == username;
+	})
+
+	return userAccount[0].amount;
 }
 
 
 function deposit(username, amountToDeposit) {
-// code from previous exercise
+	var message = "";
+
+	for (var i = 0; i < bank.userdata.length; i++){
+		if (bank.userdata[i].name == username){
+			bank.userdata[i].amount += amountToDeposit;
+			message = amountToDeposit + " was deposited";
+			return message;
+		}else{
+			message = "No such user"
+		}
+	}
+	return message;
 }
 
 
 
 function withdraw(username, amountToWithdraw) {
+	var message = "";
 
+	for (var i = 0; i < bank.userdata.length; i++){
+		if (bank.userdata[i].name == username){
+			if (bank.userdata[i].amount >= amountToWithdraw){
+				bank.userdata[i].amount -= amountToWithdraw;
+				message = amountToWithdraw + " has been withdrawn";
+				return message;
+			}else{
+				message = "Insufficient funds";
+				return message;
+			}
+		}else{
+			message = "No such user"
+		}
+	}
+	return message;
 }
 
 

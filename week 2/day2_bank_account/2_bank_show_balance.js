@@ -31,6 +31,30 @@ var bank = [
 ]
 
 function showBalance(username) {
+	// return amount linked to username using a loop
+	// for (var i = 0; i < bank.length; i++){
+	// 	if (bank[i].name === username){
+	// 		return bank[i].amount;
+	// 	}
+	// }
+
+	// return amount linked to username using filter method
+	// var userAccount = bank.filter(function(user){
+	// 	return user.name === username
+	// });
+
+	// return userAccount[0].amount;
+
+	// return amount liked to username using forEach method
+	var balance;
+	
+	bank.forEach(function(val){
+		if (val.name === username){
+			balance = val.amount
+		}
+	})
+
+	return balance;
 
 }
 

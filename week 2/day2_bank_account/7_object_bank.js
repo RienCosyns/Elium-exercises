@@ -37,7 +37,11 @@ var bank = {
 }
 
 function showBalance(username) {
+	var userAccount = bank.userdata.filter(function(user){
+		return user.name == username;
+	})
 
+	return userAccount[0].amount;
 }
 
 

@@ -31,7 +31,12 @@ var bank = {
 	],
 	showBalance: showBalance,
 	withdraw: withdraw,
-	deposit: deposit
+	deposit: deposit,
+	getUser: function(username){
+		return this.userdata.filter(function(user){
+			return user.name == username;
+		})
+	}
 }
 
 var foreignBank = {
@@ -46,26 +51,63 @@ var foreignBank = {
 	],
 	showBalance: showBalance,
 	withdraw: withdraw,
-	deposit: deposit
+	deposit: deposit,
+	getUser: function(username){
+		return this.userdata.filter(function(user){
+			return user.name == username;
+		})
+	}
 }
 
 
+
 function showBalance(username) {
- // adjust previous code using the keyword 'this'
+ 	var userAccount = this.userdata.filter(function(user){
+		return user.name == username;
+	})
+
+	return userAccount[0].amount;
 }
 
 
 function deposit(username, amountToDeposit) {
- // adjust previous code using the keyword 'this'
+  var message = "";
+
+	for (var i = 0; i < this.userdata.length; i++){
+		if (this.userdata[i].name == username){
+			this.userdata[i].amount += amountToDeposit;
+			message = amountToDeposit + " was deposited";
+			return message;
+		}else{
+			message = "No such user"
+		}
+	}
+	return message;
 }
 
 
 
 function withdraw(username, amountToWithdraw) {
- // adjust previous code using the keyword 'this'
+ 	var message = "";
+
+	for (var i = 0; i < this.userdata.length; i++){
+		if (this.userdata[i].name == username){
+			if (this.userdata[i].amount >= amountToWithdraw){
+				this.userdata[i].amount -= amountToWithdraw;
+				message = amountToWithdraw + " has been withdrawn";
+				return message;
+			}else{
+				message = "Insufficient funds";
+				return message;
+			}
+		}else{
+			message = "No such user"
+		}
+	}
+	return message;
 }
 
-
+console.log(bank.getUser("Rien"));
 console.log(bank.withdraw('Laurens', 10000))
 //outputs Insufficient funds
 console.log(bank.withdraw('Laurens', 1500))

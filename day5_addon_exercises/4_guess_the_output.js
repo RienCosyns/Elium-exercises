@@ -11,5 +11,5 @@ function greaterThan(n) {
 var greaterThan10 = greaterThan(10)
 console.log(greaterThan10(11))
 
-// outputs ??
+// outputs ??true
 

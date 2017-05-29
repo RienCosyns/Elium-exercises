@@ -26,7 +26,10 @@ Write a function forEach that does the exact same thing as the forEach method.
 var numbers = [1,2,3,4,5]
 
 function forEach(array, func) {
-
+	for (var i = 0; i < array.length; i++){
+		func(array[i], i);
+	}
+	return;
 }
 
 console.log(forEach(numbers, function(element, index) {console.log(element, index)}))

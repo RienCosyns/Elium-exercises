@@ -33,10 +33,16 @@ var bank = [
 
 function showBalance(username) {
 	// the code from previous exercise
+	var userAccount = bank.filter(function(user){
+		return user.name === username
+	});
+
+	return userAccount[0].amount;
 }
 
 function deposit(username, amountToDeposit) {
-
+	var balance = showBalance(username);
+	return balance += amountToDeposit;
 }
 
 console.log(showBalance('Laurens'))
