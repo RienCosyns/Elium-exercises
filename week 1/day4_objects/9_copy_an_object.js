@@ -17,19 +17,13 @@ Therefore, write a function that returns an exact copy of object1
 
 */
 
-var object1 = {name: 'Anja'}
+var object1 = { name: "Anja" };
 
-function copyObject(object1) {
+function copyObject(object1) {}
 
-	var object = Object.assign({},object1)
-
-	return object
-
-}
-
-object2 = copyObject(object1)
-console.log(object2)
+object2 = copyObject(object1);
+console.log(object2);
 // outputs { name: 'Anja' }
-object2.name = 'Laurens'
-console.log(object1.name)
+object2.name = "Laurens";
+console.log(object1.name);
 // outputs Anja

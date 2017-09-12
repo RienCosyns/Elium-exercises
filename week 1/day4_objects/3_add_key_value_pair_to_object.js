@@ -9,12 +9,9 @@ The function takes 3 arguments.
 
 */
 
-var object = {name: 'Frankyln'}
+var object = { name: "Frankyln" };
 
-function addKeyValuePairToObject(object, key, value) {
-	object[key] = value
-	return object
-}
+function addKeyValuePairToObject(object, key, value) {}
 
-console.log(addKeyValuePairToObject(object, 'country', 'Belgium'))
+console.log(addKeyValuePairToObject(object, "country", "Belgium"));
 // outputs {name: 'Frankyln', country: 'Belgium'}

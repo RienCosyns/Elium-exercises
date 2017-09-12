@@ -5,11 +5,9 @@ print out 'true'. If not print out 'false'.
 
 */
 
-var key = 'continent'
-var object = {name: 'Kirill', age: 27, country: 'South-Africa'}
+var key = "continent";
+var object = { name: "Kirill", age: 27, country: "South-Africa" };
 
-if (key in object) {
-	console.log(true)
-} else {
-	console.log(false)
-}
+function isKeyinObject(key, object) {}
+
+console.log(isKeyinObject(key, object));
