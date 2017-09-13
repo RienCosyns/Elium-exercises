@@ -17,6 +17,7 @@ Therefore, write a function that returns an exact copy of object1
 
 */
 
+<<<<<<< HEAD
 var object1 = {name: 'Anja'}
 
 function copyObject(object1) {
@@ -29,9 +30,13 @@ function copyObject(object1) {
 =======
 
 	var object = Object.assign({},object1)
+=======
+var object1 = { name: "Anja" };
+>>>>>>> e5fce225c5bb5e35aac65aefc8acecab649baec6
 
-	return object
+function copyObject(object1) {}
 
+<<<<<<< HEAD
 >>>>>>> 97bd3dcadb5839d634a911cb087745ec76f2d4c8
 }
 
@@ -41,4 +46,11 @@ console.log(object2)
 object2.name = 'Laurens'
 console.log(object1.name)
 console.log(object2);
+=======
+object2 = copyObject(object1);
+console.log(object2);
+// outputs { name: 'Anja' }
+object2.name = "Laurens";
+console.log(object1.name);
+>>>>>>> e5fce225c5bb5e35aac65aefc8acecab649baec6
 // outputs Anja

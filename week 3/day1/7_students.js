@@ -1,0 +1,16 @@
+let students = [
+	'Adrian',
+	'Anja',
+	'Aryanto', 
+	'Avery',
+	'Cathrin', 
+	'Franklyn',
+	'Gabriel', 
+	'Jarrod', 
+	'Kirill', 
+	'Nisha',
+	'Ola',
+	'Rien',
+	'Simas',
+	'Yasir',
+]
