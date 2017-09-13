@@ -10,10 +10,14 @@ that word as a variable.
 */
 
 function stuttering(word, times) {
-	
+  var str = "";
+  for (var i = 0; i < times; i++) {
+    str += word;
+  }
+  return str;
 }
 
-console.log(stuttering('Hi ', 5))
-// outputs Hi Hi Hi Hi Hi 
-console.log(stuttering('Javascript ', 2))
+console.log(stuttering("Hi ", 5));
+// outputs Hi Hi Hi Hi Hi
+console.log(stuttering("Javascript ", 2));
 // outputs Javascript Javascript

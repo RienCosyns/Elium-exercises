@@ -19,10 +19,14 @@ the third.
 */
 
 function switcheroo(arr) {
-
+  var firstItem = arr.shift();
+  var lastItem = arr.pop();
+  arr.push(firstItem);
+  arr.unshift(lastItem);
+  return arr;
 }
 
-console.log(switcheroo(['Feet','Torso','Head']))
+console.log(switcheroo(["Feet", "Torso", "Head"]));
 // outputs [ 'Head', 'Torso', 'Feet' ]
-console.log(switcheroo(['Last item', 'Center item', 'First item' ]))
+console.log(switcheroo(["Last item", "Center item", "First item"]));
 // outputs [ 'First item', 'Center item', 'Last item' ]

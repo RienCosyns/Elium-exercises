@@ -9,15 +9,15 @@ Once you've done that, convert it back to the original string.
 */
 
 function convertStringToArray(str) {
-
+  return str.split(" ");
 }
 
 function convertArrayBackToString(arr) {
-
+  return arr.join(" ");
 }
-  
-console.log(convertStringToArray('Anja Espanja'))
+
+console.log(convertStringToArray("Anja Espanja"));
 // outputs [ 'Anja', 'Espanja' ]
 
-console.log(convertArrayBackToString(['Anja','Espanja']))
+console.log(convertArrayBackToString(["Anja", "Espanja"]));
 // outputs Anja Espanja

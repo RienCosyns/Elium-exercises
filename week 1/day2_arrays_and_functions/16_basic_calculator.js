@@ -7,14 +7,14 @@ the operation and 2 integer.
 */
 
 function calculator(operation, n1, n2) {
-
+  return eval(`${n1}${operation}${n2}`);
 }
 
-console.log(calculator('+', 1, 2))
+console.log(calculator("+", 1, 2));
 // output 3
-console.log(calculator('-', 1, 2))
+console.log(calculator("-", 1, 2));
 // output -1
-console.log(calculator('*', 1, 2))
+console.log(calculator("*", 1, 2));
 // output 2
-console.log(calculator('/', 1, 2))
+console.log(calculator("/", 1, 2));
 // output 0.5
