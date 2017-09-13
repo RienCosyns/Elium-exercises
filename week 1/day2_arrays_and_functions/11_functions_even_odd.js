@@ -7,7 +7,7 @@ Write a function that can tell you whether an integer is odd or even.
 */
 
 function oddOrEven(n) {
-  if (0) {
+  if (n % 2 === 0) {
     return "Even";
   } else {
     return "Odd";

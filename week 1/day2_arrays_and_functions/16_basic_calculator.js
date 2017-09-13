@@ -8,6 +8,41 @@ the operation and 2 integer.
 
 function calculator(operation, n1, n2) {
   return eval(`${n1}${operation}${n2}`);
+  var op = {
+    "+": function(n1, n2) {
+      return n1 + n2;
+    },
+    "-": function(n1, n2) {
+      return n1 - n2;
+    },
+    "*": function(n1, n2) {
+      return n1 * n2;
+    },
+    "/": function(n1, n2) {
+      return n1 / n2;
+    }
+  };
+
+  return op[operation](n1, n2);
+}
+
+function calculator(operation, n1, n2) {
+  var result = 0;
+  switch (operation) {
+    case "+":
+      result = n1 + n2;
+      break;
+    case "-":
+      result = n1 - n2;
+      break;
+    case "*":
+      result = n1 * n2;
+      break;
+    case "/":
+      result = n1 / n2;
+      break;
+  }
+  return result;
 }
 
 console.log(calculator("+", 1, 2));

@@ -11,43 +11,38 @@ Find out and print in the console at which position in the array 'Anja' is.
 */
 
 var array = [
-'Adrian', 
-'Yasir', 
-'Simas', 
-'Avery', 
-'Aryanto', 
-'Cathrin', 
-'Kirill', 
-'Rien', 
-'Ola', 
-'Gabriel', 
-'Prajjwal', 
-'Franklyn', 
-'Nisha', 
-'Anja', 
-'Jarrod'
-]
+  "Adrian",
+  "Yasir",
+  "Simas",
+  "Avery",
+  "Aryanto",
+  "Cathrin",
+  "Kirill",
+  "Rien",
+  "Ola",
+  "Gabriel",
+  "Prajjwal",
+  "Franklyn",
+  "Nisha",
+  "Anja",
+  "Jarrod"
+];
 
-console.log(array[4])
-console.log(array.length)
-
-
-for (var i = 0; i < array.length; i++) {
-	console.log(array[i])
-}
-
-
+console.log(array[4]);
+console.log(array.length);
 
 for (var i = 0; i < array.length; i++) {
-	if (array[i] === 'Anja') {
-		console.log(array[i] + ' is in position ' + i)
-	} else {
-		console.log(array[i])
-	}
+  console.log(array[i]);
 }
 
+array.forEach(function(el) {
+  console.log(el);
+});
 
-
-
-
-
+for (var i = 0; i < array.length; i++) {
+  if (array[i] === "Anja") {
+    console.log(array[i] + " is in position " + i);
+  } else {
+    console.log(array[i]);
+  }
+}

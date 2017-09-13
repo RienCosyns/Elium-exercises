@@ -7,7 +7,14 @@ every exclamation mark and converting all characters to lowercase.
 */
 
 function makeItGentler(str) {
-  return str.replace(/!/g, "").toLowerCase();
+  //return str.replace(/!/g, "").toLowerCase();
+  var newString = "";
+  for (var i = 0; i < str.length; i++) {
+    if (str[i] !== "!") {
+      newString += str[i];
+    }
+  }
+  return newString.toLowerCase();
 }
 
 console.log(makeItGentler("FUCK I HATE THIS SHIT!!!!"));

@@ -7,14 +7,14 @@ Remove all spaces from her sentences.
 */
 
 function removeSpaces(str) {
-  //return str.replace(/\s/g, "");
-  var newStr = "";
-  for (var i = 0; i < str.length; i++) {
-    if (str[i] !== " ") {
-      newStr += str[i];
-    }
-  }
-  return newStr;
+  return str.replace(/\s/g, "");
+  // var newStr = "";
+  // for (var i = 0; i < str.length; i++) {
+  //   if (str[i] !== " ") {
+  //     newStr += str[i];
+  //   }
+  // }
+  // return newStr;
 }
 
 console.log(removeSpaces("Hi      Im  Avery"));
