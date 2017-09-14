@@ -11,7 +11,10 @@ The function takes 3 arguments.
 
 var object = { name: "Frankyln" };
 
-function addKeyValuePairToObject(object, key, value) {}
+function addKeyValuePairToObject(object, key, value) {
+  object[key] = value;
+  return object;
+}
 
 console.log(addKeyValuePairToObject(object, "country", "Belgium"));
 // outputs {name: 'Frankyln', country: 'Belgium'}

@@ -11,14 +11,25 @@ Arguments:
 
 */
 
-var object1 = {a: 1, b: 2, c: 3}
-var object2 = {b: 'second', c: 'third', d: 'fourth'}
+var object1 = { a: 1, b: 2, c: 3 };
+var object2 = { b: "second", c: "third", d: "fourth" };
 
 function modifyObject(object1, object2, boolean) {
-
+  if (boolean) {
+    var newObj = Object.assign({}, object1, object2);
+  } else {
+    var newObj = Object.assign({}, object2, object1);
+    // var newObj = Object.assign({}, object1);
+    // for (var key in object2) {
+    //   if (!(key in object1)) {
+    //     newObj[key] = object2[key];
+    //   }
+    // }
+  }
+  return newObj;
 }
 
-console.log(modifyObject(object1, object2, true))
+console.log(modifyObject(object1, object2, true));
 // outputs { a: 1, b: 'second', c: 'third', d: 'fourth' }
-console.log(modifyObject(object1, object2, false))
+console.log(modifyObject(object1, object2, false));
 // outputs { a: 1, b: 2, c: 3, d: 'fourth' }
